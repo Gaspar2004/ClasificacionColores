@@ -1,10 +1,9 @@
-
-from essentials.waypoint import *
 from config import *
-from essentials.control import *
+import socket
+import time
 ROBOT_IP = "192.168.0.2"  # Cambiá esto por la IP real
 PORT = 30002  # Puerto de URScript
-STEP = 0.1
+STEP = 0.2
 
 def prender_cinta3():
     script = f"""
@@ -45,17 +44,18 @@ def move_relative():
     pose[0] = pose[0] + {dx}
     pose[1] = pose[1] + {dy}
     pose[2] = pose[2] + {dz}
-    movel(pose, a=0.5, v=0.2)
+    movel(pose, a=4.0, v=0.8)
 end
 move_relative()
 """
     send_urscript(script)
 def move_up():
     move_direction(dz=STEP)
+    time.sleep(1.9)
 
 def move_down():
     move_direction(dz=-STEP)
-
+    time.sleep(1.9)
 
 
 

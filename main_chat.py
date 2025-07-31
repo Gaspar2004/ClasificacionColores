@@ -3,7 +3,7 @@ import time
 from CR3LIVE import *
 from control import move_up, move_down, prender_cinta2, prender_cinta3, apagar_cinta2, apagar_cinta3
 from collections import deque
-DELAY_SEGUNDOS = 0.5  # Tiempo desde detección hasta acción
+DELAY_SEGUNDOS = 0.8  # Tiempo desde detección hasta acción
 
 def main():
     cap = cv2.VideoCapture(0)
