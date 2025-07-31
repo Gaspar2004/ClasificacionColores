@@ -51,10 +51,10 @@ def get_predominant_color_from_frame(frame):
     if max_pixels == 0 and color_pixel_counts.get("white", 0) > (frame_area * 0.5):
         predominant_color = "white (background)" # Clarify it's likely the background
     elif max_pixels < (frame_area * 0.01): # If the "predominant" color is less than 1% of the image, it's probably noise
-         predominant_color = "unknown (low confidence)"
+         predominant_color = "unknown (low confidence)" 
 
     return predominant_color
-
+"""
 if __name__ == "__main__":
     cap = cv2.VideoCapture(0) # 0 is typically the default webcam
 
@@ -105,7 +105,8 @@ if __name__ == "__main__":
 
         # --- Get predominant color from the cropped frame ---
         pred_color = get_predominant_color_from_frame(cropped_frame)
-
+        print(pred_color)
+        #return pred_color
         # --- Display the results ---
         # Draw a rectangle on the original frame to show the ROI
         cv2.rectangle(frame, (roi_x, roi_y), (roi_x + roi_width, roi_y + roi_height), (0, 255, 0), 2)
@@ -120,4 +121,4 @@ if __name__ == "__main__":
             break
 
     cap.release()
-    cv2.destroyAllWindows()
+    cv2.destroyAllWindows()"""
